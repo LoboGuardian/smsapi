@@ -4,11 +4,19 @@
     {
       "src": "api/smsapi.py",
       "use": "@now/python",
-      "config": { "maxLambdaSize": "15mb" }
+      "config": {
+        "maxLambdaSize": "15mb"
+      }
     }
   ],
   "routes": [
-    { "handle": "filesystem" },
-    { "src": "/api/send_messages", "dest": "api/smsapi.py" }
+    {
+      "src": "/api/send_messages",
+      "dest": "api/smsapi.py"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "api/smsapi.py"
+    }
   ]
 }
