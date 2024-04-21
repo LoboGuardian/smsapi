@@ -1,14 +1,14 @@
 {
   "version": 2,
-  "functions": {
-    "api/smsapi.py": {
-      "runtime": "vercel-python@3.12.3"
-    }
-  },
-  "routes": [
+  "builds": [
     {
-      "src": "/(.*)",
-      "dest": "api/smsapi.py"
+      "src": "api/smsapi.py",
+      "use": "@now/python",
+      "config": { "maxLambdaSize": "15mb" }
     }
+  ],
+  "routes": [
+    { "handle": "filesystem" },
+    { "src": "/(.*)", "dest": "api/smsapi.py" }
   ]
 }
