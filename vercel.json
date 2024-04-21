@@ -8,8 +8,5 @@
   ],
   "routes": [
     { "src": "/api/send_messages", "dest": "api/smsapi.py" }
-  ],
-  "env": {
-    "PYTHON_VERSION": "3.12.3"
-  }
+  ]
 }
