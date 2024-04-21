@@ -70,4 +70,5 @@ async def send_messages_api(templateid: str, contacts: UploadFile = File(...)) -
         raise HTTPException(status_code=500, detail="Error processing the uploaded file")
 
     return {'Message send Successfully': 'Messages sent'}
-
+if __name__ == "__main__":
+    uvicorn.run(app, host="0.0.0.0", port=8000)
