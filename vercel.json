@@ -3,13 +3,11 @@
   "builds": [
     {
       "src": "api/smsapi.py",
-      "use": "@vercel/python",
-      "config": {
-        "pythonVersion": "3.9"
-      }
+      "use": "@vercel/python"
     }
   ],
   "routes": [
     { "src": "/api/send_messages", "dest": "api/smsapi.py" }
   ]
 }
+
