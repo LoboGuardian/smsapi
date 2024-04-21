@@ -1,17 +1,14 @@
 {
-  "version": 2,
   "builds": [
     {
-      "src": "smsapi.py",
-      "use": "@vercel/python",
-      "config": {
-        "pythonVersion": "3.9"
-      }
+      "src": "api/smsapi.py",
+      "use": "@vercel/python"
     }
   ],
   "routes": [
-    { "src": "/", "dest": "smsapi.py" },
-    { "src": "/docs", "dest": "smsapi.py" },
-    { "src": "/openapi.json", "dest": "smsapi.py" }
+    {
+      "src": "/(.*)",
+      "dest": "api/smsapi.py"
+    }
   ]
 }
