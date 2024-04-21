@@ -10,13 +10,7 @@
     }
   ],
   "routes": [
-    {
-      "src": "/api/send_messages",
-      "dest": "api/smsapi.py"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "api/smsapi.py"
-    }
+    { "src": "/api/send_messages", "dest": "api/smsapi.py" },
+    { "src": "/(.*)", "dest": "api/smsapi.py" }
   ]
 }
