@@ -1,13 +1,14 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "api/smsapi.py",
-      "use": "@vercel/python"
+  "functions": {
+    "api/smsapi.py": {
+      "runtime": "vercel-python@3.8"
     }
-  ],
+  },
   "routes": [
-    { "src": "/api/send_messages", "dest": "api/smsapi.py" }
+    {
+      "src": "/api/send_messages",
+      "dest": "api/smsapi.py"
+    }
   ]
 }
-
